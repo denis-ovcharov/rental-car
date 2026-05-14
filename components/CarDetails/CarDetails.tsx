@@ -25,11 +25,11 @@ export default function CarDetails({ car }: CarDetailsProps) {
           <Image
             src={car.img}
             alt={`${car.brand} ${car.model}`}
-            width={476}
-            height={368}
+            width={640}
+            height={512}
             loading="eager"
             className="rounded-[24px] object-cover"
-            style={{ width: '476px', height: '368px' }}
+            style={{ width: '640px', height: '512px' }}
           />
           <BookingForm />
         </div>
