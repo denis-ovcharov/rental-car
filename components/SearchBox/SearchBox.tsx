@@ -11,8 +11,12 @@ export default function SearchBox() {
 
   const [brand, setBrand] = useState(searchParams.get('brand') || '');
   const [price, setPrice] = useState(searchParams.get('price') || '');
-  const [from, setFrom] = useState(searchParams.get('from') || '');
-  const [to, setTo] = useState(searchParams.get('to') || '');
+  const [minMileage, setMinMileage] = useState(
+    searchParams.get('minMileage') || '',
+  );
+  const [maxMileage, setMaxMileage] = useState(
+    searchParams.get('maxMileage') || '',
+  );
 
   const { data } = useQuery({
     queryKey: ['brands'],
@@ -30,9 +34,9 @@ export default function SearchBox() {
     const params = new URLSearchParams();
     if (brand) params.set('brand', brand);
     if (price) params.set('price', price);
-    if (from) params.set('from', from);
-    if (to) params.set('to', to);
-
+    if (minMileage) params.set('minMileage', minMileage);
+    if (maxMileage) params.set('maxMileage', maxMileage);
+    console.log('params:', params.toString());
     router.push(`/catalog?${params.toString()}`);
   };
 
@@ -63,9 +67,9 @@ export default function SearchBox() {
           <select
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="w-[160px] h-[48px] bg-input rounded-[12px] px-4 outline-none"
+            className="w-[180px] h-[48px] bg-input rounded-[12px] px-4 outline-none"
           >
-            <option value="">Choose a price</option>
+            <option value="">Choose max price</option>
             {prices.map((p) => (
               <option key={p} value={p}>
                 {p}
@@ -80,15 +84,15 @@ export default function SearchBox() {
             <input
               type="number"
               placeholder="From"
-              value={from}
-              onChange={(e) => setFrom(e.target.value)}
+              value={minMileage}
+              onChange={(e) => setMinMileage(e.target.value)}
               className="w-[100px] h-[48px] bg-input rounded-l-[12px] px-4 outline-none"
             />
             <input
               type="number"
               placeholder="To"
-              value={to}
-              onChange={(e) => setTo(e.target.value)}
+              value={maxMileage}
+              onChange={(e) => setMaxMileage(e.target.value)}
               className="w-[100px] h-[48px] bg-input rounded-r-[12px] px-4 outline-none border-l border-gray-light"
             />
           </div>

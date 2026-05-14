@@ -6,15 +6,17 @@ import CarCard from '../CarCard/CarCard';
 import { Car } from '@/types/car';
 import { useSearchParams } from 'next/navigation';
 import { ColorRing } from 'react-loader-spinner';
+import toast from 'react-hot-toast';
+import { useEffect } from 'react';
 
 export default function CarsList() {
   const searchParams = useSearchParams();
 
   const brand = searchParams.get('brand') || '';
   const price = searchParams.get('price') || '';
-  const from = searchParams.get('from') || '';
-  const to = searchParams.get('to') || '';
-
+  const minMileage = searchParams.get('minMileage') || '';
+  const maxMileage = searchParams.get('maxMileage') || '';
+  console.log({ brand, price, minMileage, maxMileage });
   const {
     data,
     isLoading,
@@ -23,18 +25,23 @@ export default function CarsList() {
     hasNextPage,
     isFetchingNextPage,
   } = useInfiniteQuery({
-    queryKey: ['cars', brand, price, from, to],
+    queryKey: ['cars', brand, price, minMileage, maxMileage],
     queryFn: ({ pageParam }) =>
-      getCars({ page: pageParam, brand, price, from, to }),
+      getCars({ page: pageParam, brand, price, minMileage, maxMileage }),
     initialPageParam: 1,
     getNextPageParam: (lastPage, allPages) => {
       return allPages.length < lastPage.totalPages
         ? allPages.length + 1
         : undefined;
     },
+    retry: false,
   });
 
   const allCars = data?.pages.flatMap((page) => page.cars) ?? [];
+
+  useEffect(() => {
+    if (isError) toast.error('Something went wrong. Please try again later.');
+  }, [isError]);
 
   if (isLoading)
     return (
@@ -48,7 +55,6 @@ export default function CarsList() {
         />
       </div>
     );
-  if (isError) return <p>Something went wrong</p>;
 
   return (
     <div className="container flex flex-col items-center gap-8">

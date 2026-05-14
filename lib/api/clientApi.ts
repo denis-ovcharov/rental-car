@@ -6,19 +6,19 @@ type CarsParams = {
   page?: number;
   brand?: string;
   price?: string;
-  from?: string;
-  to?: string;
+  minMileage?: string;
+  maxMileage?: string;
 };
 
 export const getCars = async (
   params: CarsParams = {},
 ): Promise<{ cars: Car[]; totalPages: number }> => {
-  const { page = 1, brand, price, from, to } = params;
+  const { page = 1, brand, price, minMileage, maxMileage } = params;
   const query = new URLSearchParams({ page: String(page) });
   if (brand) query.set('brand', brand);
   if (price) query.set('price', price);
-  if (from) query.set('from', from);
-  if (to) query.set('to', to);
+  if (minMileage) query.set('minMileage', minMileage);
+  if (maxMileage) query.set('maxMileage', maxMileage);
 
   const res = await nextServer.get(`/cars?${query.toString()}`);
   return res.data;
