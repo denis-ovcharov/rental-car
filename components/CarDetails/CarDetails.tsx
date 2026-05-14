@@ -15,7 +15,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
   return (
     <div className="container py-[84px] flex flex-col gap-8">
-      <div className="flex gap-[72px]">
+      <div className="flex flex-col lg:flex-row gap-8 lg:gap-[72px]">
         {/* Left */}
         <div className="flex flex-col gap-6">
           <Image
@@ -24,8 +24,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
             width={640}
             height={512}
             loading="eager"
-            className="rounded-[24px] object-cover"
-            style={{ width: '640px', height: '512px' }}
+            className="rounded-[24px] object-cover w-full lg:w-[640px] h-[300px] lg:h-[512px]"
           />
           <BookingForm />
         </div>
@@ -58,7 +57,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
           {/* Description */}
           <p className="text-sm mb-[68px]">{car.description}</p>
 
-          <div className="flex flex-col justify-between flex-1">
+          <div className="flex flex-col gap-12 flex-1">
             {/* Rental Conditions */}
             <div>
               <h3 className="font-semibold text-xl mb-3">Rental Conditions:</h3>

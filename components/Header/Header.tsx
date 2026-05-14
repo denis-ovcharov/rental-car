@@ -2,7 +2,7 @@ import Link from 'next/link';
 
 export default function Header() {
   return (
-    <header className="container flex justify-between items-center h-[68px] px-[120px] py-[24px] ">
+    <header className="container flex justify-between items-center h-[68px] py-[24px] overflow-hidden">
       <Link href={'/'}>
         <svg width="104" height="16" aria-hidden="true">
           <use href="/logo.svg" />

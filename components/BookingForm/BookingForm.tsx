@@ -12,7 +12,7 @@ const validationSchema = Yup.object({
 
 export default function BookingForm() {
   return (
-    <div className="bg-white rounded-[10px] p-8 w-[640px] border border-gray-light">
+    <div className="bg-white rounded-[10px] p-8 w-full border border-gray-light">
       <h3 className="font-semibold text-lg mb-1">Book your car now</h3>
       <p className="text-gray text-sm mb-6">
         Stay connected! We are always ready to help you.
