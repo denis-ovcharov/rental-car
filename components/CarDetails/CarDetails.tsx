@@ -1,14 +1,10 @@
 import { Car } from '@/types/car';
 import Image from 'next/image';
 import BookingForm from '../BookingForm/BookingForm';
-import {
-  FiCalendar,
-  FiTruck,
-  FiDroplet,
-  FiSettings,
-  FiMapPin,
-  FiCheckCircle,
-} from 'react-icons/fi';
+import { FiSettings, FiMapPin, FiCheckCircle } from 'react-icons/fi';
+import { FaCar } from 'react-icons/fa';
+import { BiCalendar } from 'react-icons/bi';
+import { BsFuelPump } from 'react-icons/bs';
 
 type CarDetailsProps = {
   car: Car;
@@ -83,13 +79,13 @@ export default function CarDetails({ car }: CarDetailsProps) {
               </h3>
               <ul className="flex flex-col gap-2 text-base">
                 <li className="flex items-center gap-2">
-                  <FiCalendar className="text-main" /> Year: {car.year}
+                  <BiCalendar className="text-main" /> Year: {car.year}
                 </li>
                 <li className="flex items-center gap-2">
-                  <FiTruck className="text-main" /> Type: {car.type}
+                  <FaCar className="text-main" /> Type: {car.type}
                 </li>
                 <li className="flex items-center gap-2">
-                  <FiDroplet className="text-main" /> Fuel Consumption:{' '}
+                  <BsFuelPump className="text-main" /> Fuel Consumption:{' '}
                   {car.fuelConsumption}
                 </li>
                 <li className="flex items-center gap-2">
