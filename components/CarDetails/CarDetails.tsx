@@ -18,7 +18,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
   const [, city, country] = car.address.split(',').map((s) => s.trim());
 
   return (
-    <div className="container py-12 flex flex-col gap-8">
+    <div className="container py-[84px] flex flex-col gap-8">
       <div className="flex gap-8">
         {/* Left */}
         <div className="flex flex-col gap-6">
@@ -42,11 +42,11 @@ export default function CarDetails({ car }: CarDetailsProps) {
               <h2 className="font-semibold text-2xl">
                 {car.brand} {car.model}, {car.year}
               </h2>
-              <span className="text-gray text-sm">
+              <span className="text-gray text-base leading-[125%]">
                 Id: {car.id.split('-')[0]}
               </span>
             </div>
-            <div className="flex gap-4 text-gray text-sm mt-1">
+            <div className="flex gap-4 text-main text-sm mt-1">
               <span className="flex items-center gap-1">
                 <FiMapPin className="text-main" /> {city}, {country}
               </span>
@@ -64,10 +64,10 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
           {/* Rental Conditions */}
           <div>
-            <h3 className="font-semibold text-base mb-3">Rental Conditions:</h3>
+            <h3 className="font-semibold text-xl mb-3">Rental Conditions:</h3>
             <ul className="flex flex-col gap-2">
               {car.rentalConditions.map((condition, i) => (
-                <li key={i} className="flex items-center gap-2 text-sm">
+                <li key={i} className="flex items-center gap-2 text-base">
                   <FiCheckCircle className="text-main shrink-0" />
                   {condition}
                 </li>
@@ -77,10 +77,8 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
           {/* Car Specifications */}
           <div>
-            <h3 className="font-semibold text-base mb-3">
-              Car Specifications:
-            </h3>
-            <ul className="flex flex-col gap-2 text-sm">
+            <h3 className="font-semibold text-xl mb-3">Car Specifications:</h3>
+            <ul className="flex flex-col gap-2 text-base">
               <li className="flex items-center gap-2">
                 <FiCalendar className="text-main" /> Year: {car.year}
               </li>
@@ -100,12 +98,12 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
           {/* Accessories and functionalities */}
           <div>
-            <h3 className="font-semibold text-base mb-3">
+            <h3 className="font-semibold text-xl mb-3">
               Accessories and functionalities:
             </h3>
             <ul className="flex flex-col gap-2">
               {[...car.accessories, ...car.functionalities].map((item, i) => (
-                <li key={i} className="flex items-center gap-2 text-sm">
+                <li key={i} className="flex items-center gap-2 text-base">
                   <FiCheckCircle className="text-main shrink-0" />
                   {item}
                 </li>
