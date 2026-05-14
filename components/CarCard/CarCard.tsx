@@ -38,7 +38,7 @@ export default function CarCard({ car }: CarCardProps) {
         <p className="font-semibold text-base">${car.rentalPrice}</p>
       </div>
 
-      <ul className="flex flex-wrap gap-x-2 gap-y-1 text-sm text-[--gray] flex-1">
+      <ul className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray text-12 flex-1">
         <li>{city}</li>
         <li>|</li>
         <li>{country}</li>
