@@ -4,11 +4,9 @@ import { Suspense } from 'react';
 
 export default function CatalogPage() {
   return (
-    <div className="pt-[84px]">
-      <Suspense>
-        <SearchBox />
-        <CarsList />
-      </Suspense>
-    </div>
+    <Suspense>
+      <SearchBox />
+      <CarsList />
+    </Suspense>
   );
 }
