@@ -24,8 +24,8 @@ export default function CarCard({ car }: CarCardProps) {
           alt={`${car.brand} ${car.model}`}
           className="rounded-[14px] h-[268px] object-cover"
         />
-        <button className="absolute top-3 right-3">
-          <FaRegHeart color="white" />
+        <button className="absolute top-3 right-3 group">
+          <FaRegHeart className="text-white group-hover:text-button-hover transition-colors" />
         </button>
       </div>
 
