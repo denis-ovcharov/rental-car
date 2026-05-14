@@ -19,7 +19,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
   return (
     <div className="container py-[84px] flex flex-col gap-8">
-      <div className="flex gap-8">
+      <div className="flex gap-[72px]">
         {/* Left */}
         <div className="flex flex-col gap-6">
           <Image
@@ -60,55 +60,59 @@ export default function CarDetails({ car }: CarDetailsProps) {
           </p>
 
           {/* Description */}
-          <p className="text-sm">{car.description}</p>
+          <p className="text-sm mb-[68px]">{car.description}</p>
 
           {/* Rental Conditions */}
-          <div>
-            <h3 className="font-semibold text-xl mb-3">Rental Conditions:</h3>
-            <ul className="flex flex-col gap-2">
-              {car.rentalConditions.map((condition, i) => (
-                <li key={i} className="flex items-center gap-2 text-base">
-                  <FiCheckCircle className="text-main shrink-0" />
-                  {condition}
-                </li>
-              ))}
-            </ul>
-          </div>
+          <div className="flex flex-col gap-[110px]">
+            <div>
+              <h3 className="font-semibold text-xl mb-3">Rental Conditions:</h3>
+              <ul className="flex flex-col gap-2">
+                {car.rentalConditions.map((condition, i) => (
+                  <li key={i} className="flex items-center gap-2 text-base">
+                    <FiCheckCircle className="text-main shrink-0" />
+                    {condition}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-          {/* Car Specifications */}
-          <div>
-            <h3 className="font-semibold text-xl mb-3">Car Specifications:</h3>
-            <ul className="flex flex-col gap-2 text-base">
-              <li className="flex items-center gap-2">
-                <FiCalendar className="text-main" /> Year: {car.year}
-              </li>
-              <li className="flex items-center gap-2">
-                <FiTruck className="text-main" /> Type: {car.type}
-              </li>
-              <li className="flex items-center gap-2">
-                <FiDroplet className="text-main" /> Fuel Consumption:{' '}
-                {car.fuelConsumption}
-              </li>
-              <li className="flex items-center gap-2">
-                <FiSettings className="text-main" /> Engine Size:{' '}
-                {car.engineSize}
-              </li>
-            </ul>
-          </div>
-
-          {/* Accessories and functionalities */}
-          <div>
-            <h3 className="font-semibold text-xl mb-3">
-              Accessories and functionalities:
-            </h3>
-            <ul className="flex flex-col gap-2">
-              {[...car.accessories, ...car.functionalities].map((item, i) => (
-                <li key={i} className="flex items-center gap-2 text-base">
-                  <FiCheckCircle className="text-main shrink-0" />
-                  {item}
+            {/* Car Specifications */}
+            <div>
+              <h3 className="font-semibold text-xl mb-3">
+                Car Specifications:
+              </h3>
+              <ul className="flex flex-col gap-2 text-base">
+                <li className="flex items-center gap-2">
+                  <FiCalendar className="text-main" /> Year: {car.year}
                 </li>
-              ))}
-            </ul>
+                <li className="flex items-center gap-2">
+                  <FiTruck className="text-main" /> Type: {car.type}
+                </li>
+                <li className="flex items-center gap-2">
+                  <FiDroplet className="text-main" /> Fuel Consumption:{' '}
+                  {car.fuelConsumption}
+                </li>
+                <li className="flex items-center gap-2">
+                  <FiSettings className="text-main" /> Engine Size:{' '}
+                  {car.engineSize}
+                </li>
+              </ul>
+            </div>
+
+            {/* Accessories and functionalities */}
+            <div>
+              <h3 className="font-semibold text-xl mb-3">
+                Accessories and functionalities:
+              </h3>
+              <ul className="flex flex-col gap-2">
+                {[...car.accessories, ...car.functionalities].map((item, i) => (
+                  <li key={i} className="flex items-center gap-2 text-base">
+                    <FiCheckCircle className="text-main shrink-0" />
+                    {item}
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </div>
       </div>
