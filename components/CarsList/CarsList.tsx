@@ -60,10 +60,20 @@ export default function CarsList() {
       {hasNextPage && (
         <button
           onClick={() => fetchNextPage()}
-          className="w-[156px] h-[44px] border border-[#3470ff] text-[#3470ff] rounded-[12px] hover:bg-[#3470ff] hover:text-white mb-[24px]"
+          className="w-[156px] h-[44px] border border-button rounded-[12px] hover:border-button-hover mb-[24px] flex items-center justify-center"
           disabled={isFetchingNextPage}
         >
-          {isFetchingNextPage ? 'Loading...' : 'Load more'}
+          {isFetchingNextPage ? (
+            <ColorRing
+              visible={true}
+              height="40"
+              width="40"
+              ariaLabel="color-ring-loading"
+              colors={['#5b85e1', '#5687a7', '#597390', '#463966', '#5a9cbd']}
+            />
+          ) : (
+            'Load more'
+          )}
         </button>
       )}
     </div>
