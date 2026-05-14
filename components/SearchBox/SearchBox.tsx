@@ -33,13 +33,13 @@ export default function SearchBox() {
 
   return (
     <div className="container" style={{ paddingBottom: '56px' }}>
-      <div className="flex items-end justify-center gap-4">
+      <div className="flex items-end justify-center gap-4 flex-wrap">
         <div className="flex flex-col gap-1">
-          <label className="text-xs text-[#8d929a]">Car brand</label>
+          <label className="text-xs text-gray">Car brand</label>
           <select
             value={brand}
             onChange={(e) => setBrand(e.target.value)}
-            className="w-[224px] h-[48px] bg-[#f7f7f7] rounded-[12px] px-4 outline-none"
+            className="w-[224px] h-[48px] bg-input rounded-[12px] px-4 outline-none"
           >
             <option value="">Choose a brand</option>
             {brands?.map((b) => (
@@ -51,11 +51,11 @@ export default function SearchBox() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-xs text-[#8d929a]">Price / 1 hour</label>
+          <label className="text-xs text-gray">Price / 1 hour</label>
           <select
             value={price}
             onChange={(e) => setPrice(e.target.value)}
-            className="w-[160px] h-[48px] bg-[#f7f7f7] rounded-[12px] px-4 outline-none"
+            className="w-[160px] h-[48px] bg-input rounded-[12px] px-4 outline-none"
           >
             <option value="">Choose a price</option>
             {prices.map((p) => (
@@ -67,28 +67,28 @@ export default function SearchBox() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-xs text-[#8d929a]">Car mileage / km</label>
+          <label className="text-xs text-gray">Car mileage / km</label>
           <div className="flex">
             <input
               type="number"
               placeholder="From"
               value={from}
               onChange={(e) => setFrom(e.target.value)}
-              className="w-[100px] h-[48px] bg-[#f7f7f7] rounded-l-[12px] px-4 outline-none"
+              className="w-[100px] h-[48px] bg-input rounded-l-[12px] px-4 outline-none"
             />
             <input
               type="number"
               placeholder="To"
               value={to}
               onChange={(e) => setTo(e.target.value)}
-              className="w-[100px] h-[48px] bg-[#f7f7f7] rounded-r-[12px] px-4 outline-none border-l border-[#dadde1]"
+              className="w-[100px] h-[48px] bg-input rounded-r-[12px] px-4 outline-none border-l border-gray-light"
             />
           </div>
         </div>
 
         <button
           onClick={handleSearch}
-          className="h-[48px] px-8 bg-[#3470ff] hover:bg-[#0b44cd] text-white rounded-[12px]"
+          className="h-[48px] px-[51px] py-[12px] bg-[#3470ff] hover:bg-[#0b44cd] text-white rounded-[12px]"
         >
           Search
         </button>

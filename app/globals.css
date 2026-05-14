@@ -20,10 +20,25 @@
 
 .container {
   min-width: 335px;
-  max-width: 1440px;
+  max-width: 375px;
   margin: 0 auto;
-  padding-left: 120px;
-  padding-right: 120px;
+  padding: 0 20px;
+}
+
+/* Styles for tablet */
+@media only screen and (min-width: 768px) {
+  .container {
+    max-width: 768px;
+    padding: 0 32px;
+  }
+}
+
+/* Styles for desktop */
+@media only screen and (min-width: 1440px) {
+  .container {
+    max-width: 1440px;
+    padding: 0;
+  }
 }
 
 .btn-primary:hover {
@@ -102,4 +117,9 @@ button {
     border-color 0.25s ease-in-out,
     box-shadow 0.25s ease-in-out,
     opacity 0.25s ease-in-out;
+}
+
+input[type='number']::-webkit-outer-spin-button,
+input[type='number']::-webkit-inner-spin-button {
+  -webkit-appearance: none;
 }

@@ -15,7 +15,7 @@ export default function Home() {
         </h2>
         <Link
           href="/catalog"
-          className="w-[276px] h-[44px] py-[12px] rounded-[12px] text-white text-center btn-primary bg-button"
+          className="w-[276px] h-[44px] py-[12px] rounded-[12px] text-white text-center btn-primary bg-button flex items-center justify-center"
         >
           View Catalog
         </Link>

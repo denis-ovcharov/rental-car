@@ -52,7 +52,7 @@ export default function CarsList() {
 
   return (
     <div className="container flex flex-col items-center gap-8">
-      <ul className="flex flex-wrap gap-4">
+      <ul className="flex flex-wrap gap-4 justify-center">
         {allCars.map((car: Car) => (
           <CarCard key={car.id} car={car} />
         ))}
