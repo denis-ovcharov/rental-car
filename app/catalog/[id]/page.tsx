@@ -1,5 +1,6 @@
 import { getCarById } from '@/lib/api/serverApi';
 import CarDetails from '@/components/CarDetails/CarDetails';
+import { notFound } from 'next/navigation';
 
 type CarPageProps = {
   params: Promise<{ id: string }>;
@@ -7,7 +8,13 @@ type CarPageProps = {
 
 export default async function CarPage({ params }: CarPageProps) {
   const { id } = await params;
-  const car = await getCarById(id);
 
-  return <CarDetails car={car} />;
+  let car;
+  try {
+    car = await getCarById(id);
+  } catch {
+    notFound();
+  }
+
+  return <CarDetails car={car!} />;
 }

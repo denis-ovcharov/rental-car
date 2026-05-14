@@ -58,7 +58,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
           {/* Description */}
           <p className="text-sm mb-[68px]">{car.description}</p>
 
-          <div className="flex flex-col gap-[110px]">
+          <div className="flex flex-col justify-between flex-1">
             {/* Rental Conditions */}
             <div>
               <h3 className="font-semibold text-xl mb-3">Rental Conditions:</h3>

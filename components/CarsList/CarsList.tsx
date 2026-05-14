@@ -16,7 +16,7 @@ export default function CarsList() {
   const price = searchParams.get('price') || '';
   const minMileage = searchParams.get('minMileage') || '';
   const maxMileage = searchParams.get('maxMileage') || '';
-  console.log({ brand, price, minMileage, maxMileage });
+
   const {
     data,
     isLoading,
@@ -40,7 +40,8 @@ export default function CarsList() {
   const allCars = data?.pages.flatMap((page) => page.cars) ?? [];
 
   useEffect(() => {
-    if (isError) toast.error('Something went wrong. Please try again later.');
+    if (isError)
+      toast.error('No cars found for your request. Please try again later.');
   }, [isError]);
 
   if (isLoading)

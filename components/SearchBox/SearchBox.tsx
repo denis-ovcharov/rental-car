@@ -36,7 +36,7 @@ export default function SearchBox() {
     if (price) params.set('price', price);
     if (minMileage) params.set('minMileage', minMileage);
     if (maxMileage) params.set('maxMileage', maxMileage);
-    console.log('params:', params.toString());
+
     router.push(`/catalog?${params.toString()}`);
   };
 
