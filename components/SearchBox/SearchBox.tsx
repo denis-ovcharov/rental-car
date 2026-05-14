@@ -14,12 +14,17 @@ export default function SearchBox() {
   const [from, setFrom] = useState(searchParams.get('from') || '');
   const [to, setTo] = useState(searchParams.get('to') || '');
 
-  const { data: brands } = useQuery({
+  const { data } = useQuery({
     queryKey: ['brands'],
     queryFn: getBrands,
   });
 
-  const prices = [30, 40, 50, 60, 70, 80];
+  const prices = data?.price
+    ? Array.from(
+        { length: (data.price.max - data.price.min) / 10 + 1 },
+        (_, i) => data.price.min + i * 10,
+      )
+    : [];
 
   const handleSearch = () => {
     const params = new URLSearchParams();
@@ -45,7 +50,7 @@ export default function SearchBox() {
             className="w-[224px] h-[48px] bg-input rounded-[12px] px-4 outline-none"
           >
             <option value="">Choose a brand</option>
-            {brands?.map((b) => (
+            {data?.brands?.map((b) => (
               <option key={b} value={b}>
                 {b}
               </option>

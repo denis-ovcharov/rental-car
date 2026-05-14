@@ -1,10 +1,10 @@
 import { NextResponse } from 'next/server';
 import { isAxiosError } from 'axios';
-import { api } from '../api';
+import { api } from '../../api';
 
 export async function GET() {
   try {
-    const res = await api.get('/brands');
+    const res = await api.get('/cars/filters');
     return NextResponse.json(res.data, { status: res.status });
   } catch (error) {
     if (isAxiosError(error)) {

@@ -8,10 +8,7 @@ type CarCardProps = {
 };
 
 export default function CarCard({ car }: CarCardProps) {
-  const [city, country] = car.address
-    .split(',')
-    .slice(1)
-    .map((s) => s.trim());
+  const { city, country } = car.location;
 
   return (
     <li className="w-[276px] bg-white rounded-[24px] p-4 flex flex-col gap-4">
@@ -38,7 +35,7 @@ export default function CarCard({ car }: CarCardProps) {
         <p className="font-semibold text-base">${car.rentalPrice}</p>
       </div>
 
-      <ul className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray text-12 flex-1">
+      <ul className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray flex-1">
         <li>{city}</li>
         <li>|</li>
         <li>{country}</li>

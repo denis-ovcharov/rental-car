@@ -11,7 +11,7 @@ type CarDetailsProps = {
 };
 
 export default function CarDetails({ car }: CarDetailsProps) {
-  const [, city, country] = car.address.split(',').map((s) => s.trim());
+  const { city, country } = car.location;
 
   return (
     <div className="container py-[84px] flex flex-col gap-8">
@@ -39,7 +39,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
                 {car.brand} {car.model}, {car.year}
               </h2>
               <span className="text-gray text-base leading-[125%]">
-                Id: {car.id.split('-')[0]}
+                Id: {car.stockNumber}
               </span>
             </div>
             <div className="flex gap-4 text-main text-sm mt-1">
@@ -58,8 +58,8 @@ export default function CarDetails({ car }: CarDetailsProps) {
           {/* Description */}
           <p className="text-sm mb-[68px]">{car.description}</p>
 
-          {/* Rental Conditions */}
           <div className="flex flex-col gap-[110px]">
+            {/* Rental Conditions */}
             <div>
               <h3 className="font-semibold text-xl mb-3">Rental Conditions:</h3>
               <ul className="flex flex-col gap-2">
@@ -89,19 +89,18 @@ export default function CarDetails({ car }: CarDetailsProps) {
                   {car.fuelConsumption}
                 </li>
                 <li className="flex items-center gap-2">
-                  <FiSettings className="text-main" /> Engine Size:{' '}
-                  {car.engineSize}
+                  <FiSettings className="text-main" /> Engine: {car.engine}
                 </li>
               </ul>
             </div>
 
-            {/* Accessories and functionalities */}
+            {/* Features */}
             <div>
               <h3 className="font-semibold text-xl mb-3">
                 Accessories and functionalities:
               </h3>
               <ul className="flex flex-col gap-2">
-                {[...car.accessories, ...car.functionalities].map((item, i) => (
+                {car.features.map((item, i) => (
                   <li key={i} className="flex items-center gap-2 text-base">
                     <FiCheckCircle className="text-main shrink-0" />
                     {item}
