@@ -5,7 +5,7 @@ export default function Header() {
     <header className="container flex justify-between items-center h-[68px] py-[24px] overflow-hidden">
       <Link href={'/'}>
         <svg width="104" height="16" aria-hidden="true">
-          <use href="/logo.svg" />
+          <use href="/sprite.svg#logo" />
         </svg>
       </Link>
       <nav className="flex gap-4">
