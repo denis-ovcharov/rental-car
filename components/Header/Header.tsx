@@ -17,9 +17,7 @@ export default function Header() {
         <Link
           href={'/'}
           className={
-            pathname === '/'
-              ? 'text-button font-semibold'
-              : 'hover:text-button-hover'
+            pathname === '/' ? 'text-button' : 'hover:text-button-hover'
           }
         >
           Home
@@ -28,7 +26,7 @@ export default function Header() {
           href={'/catalog'}
           className={
             pathname === '/catalog' || pathname.startsWith('/catalog')
-              ? 'text-button font-semibold'
+              ? 'text-button'
               : 'hover:text-button-hover'
           }
         >
