@@ -1,7 +1,6 @@
 import { Car } from '@/types/car';
 import Image from 'next/image';
 import Link from 'next/link';
-import { FaRegHeart } from 'react-icons/fa';
 
 type CarCardProps = {
   car: Car;
@@ -12,19 +11,14 @@ export default function CarCard({ car }: CarCardProps) {
 
   return (
     <li className="w-[276px] bg-white rounded-[24px] p-4 flex flex-col gap-4">
-      <div className="relative">
-        <Image
-          width={276}
-          height={268}
-          loading="eager"
-          src={car.img}
-          alt={`${car.brand} ${car.model}`}
-          className="rounded-[14px] h-[268px] object-cover"
-        />
-        <button className="absolute top-3 right-3 group">
-          <FaRegHeart className="text-white group-hover:text-button-hover transition-colors" />
-        </button>
-      </div>
+      <Image
+        width={276}
+        height={268}
+        loading="eager"
+        src={car.img}
+        alt={`${car.brand} ${car.model}`}
+        className="rounded-[14px] h-[268px] object-cover"
+      />
 
       <div className="flex justify-between items-center">
         <h3 className="font-semibold text-base">
