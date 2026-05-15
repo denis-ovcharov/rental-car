@@ -4,6 +4,7 @@ import { Car } from '@/types/car';
 
 type CarsParams = {
   page?: number;
+  perPage?: number;
   brand?: string;
   price?: string;
   minMileage?: string;
@@ -13,8 +14,18 @@ type CarsParams = {
 export const getCars = async (
   params: CarsParams = {},
 ): Promise<{ cars: Car[]; totalPages: number }> => {
-  const { page = 1, brand, price, minMileage, maxMileage } = params;
-  const query = new URLSearchParams({ page: String(page) });
+  const {
+    page = 1,
+    perPage = 12,
+    brand,
+    price,
+    minMileage,
+    maxMileage,
+  } = params;
+  const query = new URLSearchParams({
+    page: String(page),
+    perPage: String(perPage),
+  });
   if (brand) query.set('brand', brand);
   if (price) query.set('price', price);
   if (minMileage) query.set('minMileage', minMileage);
