@@ -26,7 +26,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
             loading="eager"
             className="rounded-[24px] object-cover w-full lg:w-[640px] h-[300px] lg:h-[512px]"
           />
-          <BookingForm />
+          <BookingForm carId={car.id} />
         </div>
 
         {/* Right */}

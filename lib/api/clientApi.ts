@@ -33,3 +33,10 @@ export const getBrands = async (): Promise<BrandsResponse> => {
   const res = await nextServer.get('/cars/filters');
   return res.data;
 };
+
+export const createBookingRequest = async (
+  carId: string,
+  data: { name: string; email: string; comment: string },
+): Promise<void> => {
+  await nextServer.post(`/cars/${carId}/booking-requests`, data);
+};
