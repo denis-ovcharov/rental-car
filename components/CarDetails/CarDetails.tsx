@@ -17,20 +17,22 @@ export default function CarDetails({ car }: CarDetailsProps) {
     <div className="container py-[84px] flex flex-col gap-8">
       <div className="flex flex-col lg:flex-row gap-8 lg:gap-[72px]">
         {/* Left */}
-        <div className="flex flex-col gap-6">
-          <Image
-            src={car.img}
-            alt={`${car.brand} ${car.model}`}
-            width={640}
-            height={512}
-            loading="eager"
-            className="rounded-[24px] object-cover w-full lg:w-[640px] h-[300px] lg:h-[512px]"
-          />
+        <div className="flex flex-col gap-6 order-last lg:order-first">
+          <div className="hidden lg:block">
+            <Image
+              src={car.img}
+              alt={`${car.brand} ${car.model}`}
+              width={640}
+              height={512}
+              loading="eager"
+              className="rounded-[24px] object-cover w-full lg:w-[640px] h-[300px] lg:h-[512px]"
+            />
+          </div>
           <BookingForm carId={car.id} />
         </div>
 
         {/* Right */}
-        <div className="flex flex-col gap-6 flex-1">
+        <div className="flex flex-col gap-6 flex-1 order-first lg:order-last">
           {/* Title */}
           <div>
             <div className="flex items-center gap-4">
@@ -53,6 +55,17 @@ export default function CarDetails({ car }: CarDetailsProps) {
           <p className="text-button text-2xl font-semibold">
             ${car.rentalPrice}
           </p>
+
+          <div className="block lg:hidden">
+            <Image
+              src={car.img}
+              alt={`${car.brand} ${car.model}`}
+              width={640}
+              height={300}
+              loading="eager"
+              className="rounded-[24px] object-cover w-full h-[300px]"
+            />
+          </div>
 
           {/* Description */}
           <p className="text-sm mb-[68px]">{car.description}</p>
