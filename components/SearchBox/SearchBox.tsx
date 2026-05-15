@@ -108,7 +108,7 @@ export default function SearchBox() {
         <div className="flex flex-col gap-2 items-center">
           <button
             onClick={handleSearch}
-            className="h-[48px] px-[51px] py-[12px] bg-[#3470ff] hover:bg-[#0b44cd] text-white rounded-[12px]"
+            className="h-[48px] px-[51px] py-[12px] bg-button hover:bg-button-hover text-white rounded-[12px]"
           >
             Search
           </button>
