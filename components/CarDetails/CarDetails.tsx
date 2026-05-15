@@ -15,24 +15,24 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
   return (
     <div className="container py-[84px] flex flex-col gap-8">
-      <div className="flex flex-col lg:flex-row gap-8 lg:gap-[72px]">
+      <div className="flex flex-col xl:flex-row gap-8 xl:gap-[72px]">
         {/* Left */}
-        <div className="flex flex-col gap-6 order-last lg:order-first">
-          <div className="hidden lg:block">
+        <div className="flex flex-col gap-6 order-last xl:order-first">
+          <div className="hidden xl:block">
             <Image
               src={car.img}
               alt={`${car.brand} ${car.model}`}
               width={640}
               height={512}
               loading="eager"
-              className="rounded-[24px] object-cover w-full lg:w-[640px] h-[300px] lg:h-[512px]"
+              className="rounded-[24px] object-cover w-full xl:w-[640px] h-[300px] xl:h-[512px]"
             />
           </div>
           <BookingForm carId={car.id} />
         </div>
 
         {/* Right */}
-        <div className="flex flex-col gap-6 flex-1 order-first lg:order-last">
+        <div className="flex flex-col gap-6 flex-1 order-first xl:order-last">
           {/* Title */}
           <div>
             <div className="flex items-center gap-4">
@@ -56,7 +56,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
             ${car.rentalPrice}
           </p>
 
-          <div className="block lg:hidden">
+          <div className="block xl:hidden">
             <Image
               src={car.img}
               alt={`${car.brand} ${car.model}`}
