@@ -1,6 +1,10 @@
+'use client';
+
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 
 export default function Header() {
+  const pathname = usePathname();
   return (
     <header className="container flex justify-between items-center h-[68px] py-[24px] overflow-hidden">
       <Link href={'/'}>
@@ -10,10 +14,24 @@ export default function Header() {
       </Link>
       <nav className="flex gap-4">
         {' '}
-        <Link href={'/'} className="hover:text-button-hover">
+        <Link
+          href={'/'}
+          className={
+            pathname === '/'
+              ? 'text-button font-semibold'
+              : 'hover:text-button-hover'
+          }
+        >
           Home
         </Link>
-        <Link href={'/catalog'} className="hover:text-button-hover">
+        <Link
+          href={'/catalog'}
+          className={
+            pathname === '/catalog' || pathname.startsWith('/catalog')
+              ? 'text-button font-semibold'
+              : 'hover:text-button-hover'
+          }
+        >
           Catalog
         </Link>
       </nav>
