@@ -40,6 +40,14 @@ export default function SearchBox() {
     router.push(`/catalog?${params.toString()}`);
   };
 
+  const handleClear = () => {
+    setBrand('');
+    setPrice('');
+    setMinMileage('');
+    setMaxMileage('');
+    router.push('/catalog');
+  };
+
   return (
     <div
       className="container"
@@ -97,13 +105,20 @@ export default function SearchBox() {
             />
           </div>
         </div>
-
-        <button
-          onClick={handleSearch}
-          className="h-[48px] px-[51px] py-[12px] bg-[#3470ff] hover:bg-[#0b44cd] text-white rounded-[12px]"
-        >
-          Search
-        </button>
+        <div className="flex flex-col gap-2 items-center">
+          <button
+            onClick={handleSearch}
+            className="h-[48px] px-[51px] py-[12px] bg-[#3470ff] hover:bg-[#0b44cd] text-white rounded-[12px]"
+          >
+            Search
+          </button>
+          <button
+            onClick={handleClear}
+            className="text-sm text-gray hover:text-button underline"
+          >
+            Clear filters
+          </button>
+        </div>
       </div>
     </div>
   );
