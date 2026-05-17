@@ -1,6 +1,6 @@
 # 🚗 RentalCar
 
-A modern car rental application built with Next.js 15, allowing users to browse, filter, and book rental cars.
+A modern car rental application built with Next.js 16, allowing users to browse, filter, and book rental cars.
 
 ## ✨ Features
 
@@ -14,7 +14,7 @@ A modern car rental application built with Next.js 15, allowing users to browse,
 
 ## 🛠 Tech Stack
 
-- **Framework:** Next.js 15 (App Router)
+- **Framework:** Next.js 16 (App Router)
 - **Language:** TypeScript
 - **Styling:** Tailwind CSS v4
 - **Data Fetching:** TanStack Query (React Query)
