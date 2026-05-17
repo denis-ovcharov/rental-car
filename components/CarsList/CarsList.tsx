@@ -66,7 +66,12 @@ export default function CarsList() {
       </ul>
       {hasNextPage && (
         <button
-          onClick={() => fetchNextPage()}
+          onClick={() => {
+            fetchNextPage();
+            setTimeout(() => {
+              window.scrollBy({ top: 500, behavior: 'smooth' });
+            }, 500);
+          }}
           className="w-[156px] h-[44px] border border-button rounded-[12px] hover:border-button-hover mb-[24px] flex items-center justify-center"
           disabled={isFetchingNextPage}
         >
