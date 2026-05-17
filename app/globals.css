@@ -72,7 +72,7 @@ li {
   color: inherit;
 }
 
-input::placeholder {
+input[type='number']::placeholder {
   color: var(--color-main);
 }
 
