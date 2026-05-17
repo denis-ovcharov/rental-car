@@ -4,6 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getBrands } from '@/lib/api/clientApi';
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
+import Select from 'react-select';
 
 export default function SearchBox() {
   const router = useRouter();
@@ -48,39 +49,80 @@ export default function SearchBox() {
     router.push('/catalog');
   };
 
+  const brandOptions = data?.brands?.map((b) => ({ value: b, label: b })) ?? [];
+  const priceOptions = prices.map((p) => ({
+    value: String(p),
+    label: String(p),
+  }));
+
+  const selectStyles = {
+    control: (base: object) => ({
+      ...base,
+      height: '48px',
+      borderRadius: '12px',
+      backgroundColor: '#f7f7f7',
+      border: 'none',
+      boxShadow: 'none',
+      cursor: 'pointer',
+    }),
+    menu: (base: object) => ({
+      ...base,
+      borderRadius: '12px',
+      overflow: 'hidden',
+      boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+    }),
+    menuList: (base: object) => ({
+      ...base,
+      borderRadius: '12px',
+      padding: '8px',
+    }),
+    option: (
+      base: object,
+      state: { isSelected: boolean; isFocused: boolean },
+    ) => ({
+      ...base,
+      backgroundColor: state.isSelected
+        ? '#00aad4'
+        : state.isFocused
+          ? '#f7f7f7'
+          : 'white',
+      color: '#101828',
+      cursor: 'pointer',
+    }),
+    placeholder: (base: object) => ({
+      ...base,
+      color: '#101828',
+    }),
+    indicatorSeparator: () => ({
+      display: 'none',
+    }),
+  };
+
   return (
     <div className="container pt-[40px] pb-[32px] md:pt-[84px] md:pb-[56px]">
       <div className="flex items-end justify-center gap-4 flex-wrap">
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray">Car brand</label>
-          <select
-            value={brand}
-            onChange={(e) => setBrand(e.target.value)}
-            className="w-[224px] h-[48px] bg-input rounded-[12px] px-4 outline-none"
-          >
-            <option value="">Choose a brand</option>
-            {data?.brands?.map((b) => (
-              <option key={b} value={b}>
-                {b}
-              </option>
-            ))}
-          </select>
+          <Select
+            options={brandOptions}
+            value={brand ? { value: brand, label: brand } : null}
+            onChange={(option) => setBrand(option?.value || '')}
+            placeholder="Choose a brand"
+            isClearable
+            styles={selectStyles}
+          />
         </div>
 
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray">Price / 1 hour</label>
-          <select
-            value={price}
-            onChange={(e) => setPrice(e.target.value)}
-            className="w-[180px] h-[48px] bg-input rounded-[12px] px-4 outline-none"
-          >
-            <option value="">Choose max price</option>
-            {prices.map((p) => (
-              <option key={p} value={p}>
-                {p}
-              </option>
-            ))}
-          </select>
+          <Select
+            options={priceOptions}
+            value={price ? { value: price, label: price } : null}
+            onChange={(option) => setPrice(option?.value || '')}
+            placeholder="Choose a price"
+            isClearable
+            styles={selectStyles}
+          />
         </div>
 
         <div className="flex flex-col gap-1">
