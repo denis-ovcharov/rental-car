@@ -14,6 +14,7 @@ export async function generateMetadata({ params }: CarPageProps) {
     return {
       title: `${car.brand} ${car.model} ${car.year} — RentalCar`,
       description: car.description,
+      images: [{ url: car.img }],
     };
   } catch {
     return {
