@@ -84,7 +84,7 @@ export default function BookingForm({ carId }: BookingFormProps) {
           </div>
           <button
             type="submit"
-            className="w-[156px] h-[44px] bg-button hover:bg-button-hover text-white rounded-[12px] self-center mt-2"
+            className="w-full h-[44px] bg-button hover:bg-button-hover text-white rounded-[12px] self-center mt-2"
           >
             Send
           </button>
