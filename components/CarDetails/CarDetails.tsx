@@ -15,24 +15,24 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
   return (
     <div className="container py-[84px] flex flex-col gap-8">
-      <div className="flex flex-col xl:flex-row gap-8 xl:gap-[72px]">
+      <div className="flex flex-col 2xl:flex-row gap-8 2xl:gap-[72px]">
         {/* Left */}
-        <div className="flex flex-col gap-6 order-last xl:order-first">
-          <div className="hidden xl:block">
+        <div className="flex flex-col gap-6 order-last 2xl:order-first">
+          <div className="hidden 2xl:block">
             <Image
               src={car.img}
               alt={`${car.brand} ${car.model}`}
               width={640}
               height={512}
               loading="eager"
-              className="rounded-[24px] object-cover w-full xl:w-[640px] h-[300px] xl:h-[512px]"
+              className="rounded-[24px] object-cover w-full 2xl:w-[640px] h-[300px] 2xl:h-[512px]"
             />
           </div>
           <BookingForm carId={car.id} />
         </div>
 
         {/* Right */}
-        <div className="flex flex-col gap-6 flex-1 order-first xl:order-last">
+        <div className="flex flex-col gap-6 flex-1 order-first 2xl:order-last">
           {/* Title */}
           <div>
             <div className="flex items-center gap-4">
@@ -56,7 +56,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
             ${car.rentalPrice}
           </p>
 
-          <div className="block xl:hidden">
+          <div className="block 2xl:hidden">
             <Image
               src={car.img}
               alt={`${car.brand} ${car.model}`}
@@ -73,7 +73,9 @@ export default function CarDetails({ car }: CarDetailsProps) {
           <div className="flex flex-col gap-12 flex-1">
             {/* Rental Conditions */}
             <div>
-              <h3 className="font-semibold text-xl mb-3">Rental Conditions:</h3>
+              <h3 className="font-semibold text-2xl mb-3">
+                Rental Conditions:
+              </h3>
               <ul className="flex flex-col gap-2">
                 {car.rentalConditions.map((condition, i) => (
                   <li key={i} className="flex items-center gap-2 text-base">
@@ -86,7 +88,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
             {/* Car Specifications */}
             <div>
-              <h3 className="font-semibold text-xl mb-3">
+              <h3 className="font-semibold text-2xl mb-3">
                 Car Specifications:
               </h3>
               <ul className="flex flex-col gap-2 text-base">
@@ -108,7 +110,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
             {/* Features */}
             <div>
-              <h3 className="font-semibold text-xl mb-3">
+              <h3 className="font-semibold text-2xl mb-3">
                 Accessories and functionalities:
               </h3>
               <ul className="flex flex-col gap-2">

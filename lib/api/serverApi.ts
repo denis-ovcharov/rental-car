@@ -1,5 +1,5 @@
 import { api } from '@/app/api/api';
-import { BrandsResponse } from '@/types/brands';
+import { FiltersResponse } from '@/types/filters';
 import { Car } from '@/types/car';
 
 export const getCars = async (
@@ -14,7 +14,7 @@ export const getCarById = async (carId: string): Promise<Car> => {
   return res.data;
 };
 
-export const getBrands = async (): Promise<BrandsResponse> => {
+export const getBrands = async (): Promise<FiltersResponse> => {
   const res = await api.get('/cars/filters');
   return res.data;
 };

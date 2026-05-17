@@ -1,4 +1,4 @@
-export type BrandsResponse = {
+export type FiltersResponse = {
   brands: string[];
   price: {
     min: number;

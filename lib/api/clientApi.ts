@@ -1,4 +1,4 @@
-import { BrandsResponse } from '@/types/brands';
+import { FiltersResponse } from '@/types/filters';
 import { nextServer } from './api';
 import { Car } from '@/types/car';
 
@@ -40,7 +40,7 @@ export const getCarById = async (carId: string): Promise<Car> => {
   return res.data;
 };
 
-export const getBrands = async (): Promise<BrandsResponse> => {
+export const getBrands = async (): Promise<FiltersResponse> => {
   const res = await nextServer.get('/cars/filters');
   return res.data;
 };
