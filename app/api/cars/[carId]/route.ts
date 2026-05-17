@@ -4,11 +4,11 @@ import { api } from '../../api';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
+  { params }: { params: Promise<{ carId: string }> },
 ) {
   try {
-    const { id } = await params;
-    const res = await api.get(`/cars/${id}`);
+    const { carId } = await params;
+    const res = await api.get(`/cars/${carId}`);
 
     return NextResponse.json(res.data, { status: res.status });
   } catch (error) {

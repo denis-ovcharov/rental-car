@@ -4,14 +4,14 @@ import { api } from '@/app/api/api';
 
 export async function POST(
   request: NextRequest,
-  { params }: { params: Promise<{ id: string }> },
+  { params }: { params: Promise<{ carId: string }> },
 ) {
   try {
-    const { id } = await params;
+    const { carId } = await params;
 
     const body = await request.json();
     console.log('body:', body);
-    const res = await api.post(`/cars/${id}/booking-requests`, body);
+    const res = await api.post(`/cars/${carId}/booking-requests`, body);
 
     return NextResponse.json(res.data, { status: res.status });
   } catch (error) {

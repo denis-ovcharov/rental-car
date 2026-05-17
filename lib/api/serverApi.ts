@@ -9,8 +9,8 @@ export const getCars = async (
   return res.data;
 };
 
-export const getCarById = async (id: string): Promise<Car> => {
-  const res = await api.get(`/cars/${id}`);
+export const getCarById = async (carId: string): Promise<Car> => {
+  const res = await api.get(`/cars/${carId}`);
   return res.data;
 };
 
