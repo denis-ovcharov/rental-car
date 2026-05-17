@@ -49,10 +49,7 @@ export default function SearchBox() {
   };
 
   return (
-    <div
-      className="container"
-      style={{ paddingBottom: '56px', paddingTop: '84px' }}
-    >
+    <div className="container pt-[40px] pb-[32px] md:pt-[84px] md:pb-[56px]">
       <div className="flex items-end justify-center gap-4 flex-wrap">
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray">Car brand</label>
