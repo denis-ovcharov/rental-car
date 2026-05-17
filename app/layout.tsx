@@ -18,6 +18,7 @@ export const metadata: Metadata = {
     title: 'RentalCar — Find your perfect rental car',
     description: 'Browse and book rental cars online.',
     type: 'website',
+    images: [{ url: '/home-bg.jpg', width: 1200, height: 630 }],
   },
 };
 
