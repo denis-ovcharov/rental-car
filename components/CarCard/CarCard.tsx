@@ -10,17 +10,19 @@ export default function CarCard({ car }: CarCardProps) {
   const { city, country } = car.location;
 
   return (
-    <li className="w-[276px] bg-white rounded-[24px] p-4 flex flex-col gap-4">
-      <Image
-        width={276}
-        height={268}
-        loading="eager"
-        src={car.img}
-        alt={`${car.brand} ${car.model}`}
-        className="rounded-[14px] h-[268px] object-cover"
-      />
+    <li className="w-full md:w-[276px] bg-white rounded-[24px] p-4 flex flex-col">
+      <div className="relative w-full h-[268px] mb-4">
+        <Image
+          fill
+          sizes="276px"
+          loading="eager"
+          src={car.img}
+          alt={`${car.brand} ${car.model}`}
+          className="rounded-[14px] object-cover"
+        />
+      </div>
 
-      <div className="flex justify-between items-center">
+      <div className="flex justify-between items-center mb-2">
         <h3 className="font-semibold text-base">
           {car.brand} <span className="text-button">{car.model}</span>
           {', '}
@@ -29,7 +31,7 @@ export default function CarCard({ car }: CarCardProps) {
         <p className="font-semibold text-base">${car.rentalPrice}</p>
       </div>
 
-      <ul className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-gray flex-1">
+      <ul className="flex flex-wrap gap-x-2 gap-y-1 text-xs text-main flex-1 mb-3">
         <li>{city}</li>
         <li>|</li>
         <li>{country}</li>
