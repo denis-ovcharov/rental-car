@@ -43,6 +43,8 @@ export default function CarCard({ car }: CarCardProps) {
 
       <Link
         href={`/catalog/${car.id}`}
+        target="_blank"
+        rel="noopener noreferrer"
         className="w-full h-[44px] bg-button hover:bg-button-hover text-white rounded-[12px] flex items-center justify-center"
       >
         Read more
