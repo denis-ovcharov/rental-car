@@ -6,7 +6,7 @@ import { usePathname } from 'next/navigation';
 export default function Header() {
   const pathname = usePathname();
   return (
-    <header className="container flex justify-between items-center h-[68px] py-[24px] overflow-hidden">
+    <header className="container flex justify-between items-center h-[68px] py-[24px] overflow-hidden bg-white">
       <Link href={'/'}>
         <svg width="104" height="16" aria-hidden="true">
           <use href="/sprite.svg#logo" />
