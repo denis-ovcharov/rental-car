@@ -6,6 +6,22 @@ type CarPageProps = {
   params: Promise<{ carId: string }>;
 };
 
+export async function generateMetadata({ params }: CarPageProps) {
+  const { carId } = await params;
+
+  try {
+    const car = await getCarById(carId);
+    return {
+      title: `${car.brand} ${car.model} ${car.year} — RentalCar`,
+      description: car.description,
+    };
+  } catch {
+    return {
+      title: 'Car not found — RentalCar',
+    };
+  }
+}
+
 export default async function CarPage({ params }: CarPageProps) {
   const { carId } = await params;
 

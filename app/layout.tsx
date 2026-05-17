@@ -10,8 +10,15 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  title: 'Rental car App',
-  description: 'The best cars are here',
+  title: 'RentalCar — Find your perfect rental car',
+  description:
+    'Browse and book rental cars online. Filter by brand, price, and mileage. Reliable and budget-friendly rentals for any journey.',
+  keywords: ['rental car', 'car booking', 'rent a car', 'car hire'],
+  openGraph: {
+    title: 'RentalCar — Find your perfect rental car',
+    description: 'Browse and book rental cars online.',
+    type: 'website',
+  },
 };
 
 export default function RootLayout({
