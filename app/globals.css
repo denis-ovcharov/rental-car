@@ -72,6 +72,10 @@ li {
   color: inherit;
 }
 
+input::placeholder {
+  color: var(--color-main);
+}
+
 a,
 button {
   transition: all 200ms ease-in-out;

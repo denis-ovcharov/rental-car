@@ -111,7 +111,7 @@ export default function SearchBox() {
           </button>
           <button
             onClick={handleClear}
-            className="text-sm text-gray hover:text-button underline"
+            className="text-sm text-gray hover:text-button"
           >
             Clear filters
           </button>
