@@ -10,8 +10,8 @@ export default function CarCard({ car }: CarCardProps) {
   const { city, country } = car.location;
 
   return (
-    <li className="w-full md:w-[276px] bg-white rounded-[24px] p-4 flex flex-col">
-      <div className="relative w-full h-[268px] mb-4">
+    <li className="w-full md:w-69 bg-white rounded-3xl p-4 flex flex-col">
+      <div className="relative w-full h-67 mb-4">
         <Image
           fill
           sizes="276px"
@@ -47,7 +47,7 @@ export default function CarCard({ car }: CarCardProps) {
         href={`/catalog/${car.id}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full h-[44px] bg-button hover:bg-button-hover text-white rounded-[12px] flex items-center justify-center"
+        className="w-full h-11 bg-button hover:bg-button-hover text-white rounded-xl flex items-center justify-center"
       >
         Read more
       </Link>

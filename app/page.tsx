@@ -3,7 +3,7 @@ import Link from 'next/link';
 export default function Home() {
   return (
     <div
-      className="w-full h-[400px] md:h-[550px] lg:h-[700px] bg-cover bg-center flex flex-col items-center justify-end pb-[40px] md:pb-[60px] h-screen"
+      className="w-full h-100 md:h-137.5 lg:h-175 bg-cover bg-center flex flex-col items-center justify-end pb-10 md:pb-15"
       style={{
         backgroundImage: "url('/home-bg.jpg')",
         height: 'calc(100vh - 68px)',
@@ -24,7 +24,7 @@ export default function Home() {
         </h2>
         <Link
           href="/catalog"
-          className="animate-fade-in-up w-[276px] h-[44px] rounded-[12px] text-white text-center btn-primary bg-button flex items-center justify-center"
+          className="animate-fade-in-up w-69 h-11 rounded-xl text-white text-center btn-primary bg-button flex items-center justify-center"
           style={{ animationDelay: '1.6s', opacity: 0 }}
         >
           View Catalog

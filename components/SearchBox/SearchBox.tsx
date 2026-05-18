@@ -56,7 +56,7 @@ export default function SearchBox() {
   }));
 
   return (
-    <div className="container pt-[40px] pb-[32px] md:pt-[84px] md:pb-[56px]">
+    <div className="container pt-10 pb-8 md:pt-21 md:pb-14">
       <div className="flex items-end justify-center gap-4 flex-wrap">
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray">Car brand</label>
@@ -70,7 +70,7 @@ export default function SearchBox() {
         </div>
 
         <div className="flex flex-col gap-1">
-          <label className="text-xs text-gray">Price / 1 hour</label>
+          <label className="text-xs text-gray ">Price / 1 hour</label>
           <CustomSelect
             instanceId="price-select"
             isSearchable={false}
@@ -89,21 +89,21 @@ export default function SearchBox() {
               placeholder="From"
               value={minMileage}
               onChange={(e) => setMinMileage(e.target.value)}
-              className="w-[100px] h-[48px] bg-input rounded-l-[12px] px-4 outline-none"
+              className="w-25 h-12 bg-input rounded-l-xl px-4 outline-none"
             />
             <input
               type="number"
               placeholder="To"
               value={maxMileage}
               onChange={(e) => setMaxMileage(e.target.value)}
-              className="w-[100px] h-[48px] bg-input rounded-r-[12px] px-4 outline-none border-l border-gray-light"
+              className="w-25 h-12 bg-input rounded-r-xl px-4 outline-none border-l border-gray-light"
             />
           </div>
         </div>
         <div className="flex flex-col gap-2 items-center">
           <button
             onClick={handleSearch}
-            className="h-[48px] px-[51px] py-[12px] bg-button hover:bg-button-hover text-white rounded-[12px]"
+            className="h-12 px-12.75 py-3 bg-button hover:bg-button-hover text-white rounded-xl"
           >
             Search
           </button>

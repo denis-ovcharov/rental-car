@@ -47,7 +47,7 @@ export default function BookingForm({ carId }: BookingFormProps) {
               name="name"
               type="text"
               placeholder="Name*"
-              className="w-full h-[48px] bg-input rounded-[12px] px-4 outline-none"
+              className="w-full h-12 bg-input rounded-xl px-4 outline-none"
             />
             <ErrorMessage
               name="name"
@@ -61,7 +61,7 @@ export default function BookingForm({ carId }: BookingFormProps) {
               name="email"
               type="email"
               placeholder="Email*"
-              className="w-full h-[48px] bg-input rounded-[12px] px-4 outline-none"
+              className="w-full h-12 bg-input rounded-xl px-4 outline-none"
             />
             <ErrorMessage
               name="email"
@@ -74,7 +74,7 @@ export default function BookingForm({ carId }: BookingFormProps) {
               as="textarea"
               name="comment"
               placeholder="Comment*"
-              className="w-full h-[56px] bg-input rounded-[12px] px-4 py-3 outline-none resize-none"
+              className="w-full h-14 bg-input rounded-xl px-4 py-3 outline-none resize-none"
             />
             <ErrorMessage
               name="comment"
@@ -84,7 +84,7 @@ export default function BookingForm({ carId }: BookingFormProps) {
           </div>
           <button
             type="submit"
-            className="w-full h-[44px] bg-button hover:bg-button-hover text-white rounded-[12px] self-center mt-2"
+            className="w-full h-11 bg-button hover:bg-button-hover text-white rounded-xl self-center mt-2"
           >
             Send
           </button>

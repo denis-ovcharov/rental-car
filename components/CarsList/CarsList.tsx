@@ -76,7 +76,7 @@ export default function CarsList() {
               window.scrollBy({ top: 500, behavior: 'smooth' });
             }, 500);
           }}
-          className="w-[156px] h-[44px] border border-button rounded-[12px] hover:border-button-hover mb-[24px] flex items-center justify-center"
+          className="w-39 h-11 border border-button rounded-xl hover:border-button-hover mb-6 flex items-center justify-center"
           disabled={isFetchingNextPage}
         >
           {isFetchingNextPage ? (

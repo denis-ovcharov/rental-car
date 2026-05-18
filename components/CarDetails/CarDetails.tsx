@@ -14,8 +14,8 @@ export default function CarDetails({ car }: CarDetailsProps) {
   const { city, country } = car.location;
 
   return (
-    <div className="container py-[84px] flex flex-col gap-8">
-      <div className="flex flex-col 2xl:flex-row gap-8 2xl:gap-[72px]">
+    <div className="container py-21 flex flex-col gap-8">
+      <div className="flex flex-col 2xl:flex-row gap-8 2xl:gap-18">
         {/* Left */}
         <div className="flex flex-col gap-6 order-last 2xl:order-first">
           <div className="hidden 2xl:block">
@@ -25,7 +25,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
               width={640}
               height={512}
               loading="eager"
-              className="rounded-[24px] object-cover w-full 2xl:w-[640px] h-[300px] 2xl:h-[512px]"
+              className="rounded-3xl object-cover w-full 2xl:w-160 h-75 2xl:h-128"
             />
           </div>
           <BookingForm carId={car.id} />
@@ -63,12 +63,12 @@ export default function CarDetails({ car }: CarDetailsProps) {
               width={640}
               height={300}
               loading="eager"
-              className="rounded-[24px] object-cover w-full h-[300px]"
+              className="rounded-3xl object-cover w-full h-75"
             />
           </div>
 
           {/* Description */}
-          <p className="text-sm mb-[44px]">{car.description}</p>
+          <p className="text-sm mb-11">{car.description}</p>
 
           <div className="flex flex-col flex-1">
             {/* Rental Conditions */}
