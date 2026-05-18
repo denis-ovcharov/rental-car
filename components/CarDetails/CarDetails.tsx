@@ -40,7 +40,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
                 {car.brand} {car.model}, {car.year}
               </h2>
               <span className="text-gray text-base leading-[125%]">
-                Id: {car.stockNumber}
+                Article: {car.stockNumber}
               </span>
             </div>
             <div className="flex gap-4 text-main text-sm mt-1">
@@ -68,11 +68,11 @@ export default function CarDetails({ car }: CarDetailsProps) {
           </div>
 
           {/* Description */}
-          <p className="text-sm mb-[68px]">{car.description}</p>
+          <p className="text-sm mb-[44px]">{car.description}</p>
 
-          <div className="flex flex-col gap-12 flex-1">
+          <div className="flex flex-col flex-1">
             {/* Rental Conditions */}
-            <div>
+            <div className="border-b border-gray-light py-6">
               <h3 className="font-semibold text-2xl mb-3">
                 Rental Conditions:
               </h3>
@@ -87,7 +87,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
             </div>
 
             {/* Car Specifications */}
-            <div>
+            <div className="border-b border-gray-light py-6">
               <h3 className="font-semibold text-2xl mb-3">
                 Car Specifications:
               </h3>
@@ -110,7 +110,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
             {/* Features */}
             <div>
-              <h3 className="font-semibold text-2xl mb-3">
+              <h3 className="font-semibold text-2xl mb-3 py-6">
                 Accessories and functionalities:
               </h3>
               <ul className="flex flex-col gap-2">
