@@ -5,6 +5,7 @@ import { FiSettings, FiMapPin, FiCheckCircle } from 'react-icons/fi';
 import { FaCar } from 'react-icons/fa';
 import { BiCalendar } from 'react-icons/bi';
 import { BsFuelPump } from 'react-icons/bs';
+import { PiRoadHorizonLight } from 'react-icons/pi';
 
 type CarDetailsProps = {
   car: Car;
@@ -47,7 +48,6 @@ export default function CarDetails({ car }: CarDetailsProps) {
               <span className="flex items-center gap-1">
                 <FiMapPin className="text-main" /> {city}, {country}
               </span>
-              <span>Mileage: {car.mileage.toLocaleString()} km</span>
             </div>
           </div>
 
@@ -105,14 +105,16 @@ export default function CarDetails({ car }: CarDetailsProps) {
                 <li className="flex items-center gap-2">
                   <FiSettings className="text-main" /> Engine: {car.engine}
                 </li>
+                <li className="flex items-center gap-2">
+                  <PiRoadHorizonLight className="text-main" /> Mileage:{' '}
+                  {car.mileage.toLocaleString()} km
+                </li>
               </ul>
             </div>
 
             {/* Features */}
             <div>
-              <h3 className="font-semibold text-2xl mb-3 pt-6">
-                Accessories and functionalities:
-              </h3>
+              <h3 className="font-semibold text-2xl mb-3 pt-6">Features:</h3>
               <ul className="flex flex-col gap-2">
                 {car.features.map((item, i) => (
                   <li key={i} className="flex items-center gap-2 text-base">
