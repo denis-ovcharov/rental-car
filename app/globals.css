@@ -129,10 +129,7 @@ select {
 }
 
 a:focus-visible,
-button:focus-visible,
-input:focus-visible,
-textarea:focus-visible,
-select:focus-visible {
+button:focus-visible {
   outline: 2px solid rgb(94, 131, 213);
   outline-offset: 3px;
 }
@@ -150,4 +147,25 @@ button {
 input[type='number']::-webkit-outer-spin-button,
 input[type='number']::-webkit-inner-spin-button {
   -webkit-appearance: none;
+}
+
+.react-select__menu-list::-webkit-scrollbar {
+  width: 23px;
+  border-radius: 10px;
+}
+
+.react-select__menu-list::-webkit-scrollbar-track {
+  background: transparent;
+  margin: 12px 0;
+}
+
+.react-select__menu-list::-webkit-scrollbar-thumb {
+  background: var(--color-gray);
+  border-radius: 10px;
+  border: 8px solid white;
+  background-clip: padding-box;
+}
+
+.react-select__menu-list::-webkit-scrollbar-button {
+  display: none;
 }

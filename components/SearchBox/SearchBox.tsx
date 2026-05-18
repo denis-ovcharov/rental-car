@@ -4,7 +4,7 @@ import { useQuery } from '@tanstack/react-query';
 import { getBrands } from '@/lib/api/clientApi';
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
-import Select from 'react-select';
+import CustomSelect from '../ui/CustomSelect/CustomSelect';
 
 export default function SearchBox() {
   const router = useRouter();
@@ -55,88 +55,28 @@ export default function SearchBox() {
     label: String(p),
   }));
 
-  const selectStyles = {
-    control: (base: object) => ({
-      ...base,
-      width: '210px',
-      height: '48px',
-      minWidth: '210px',
-      maxWidth: '210px',
-      borderRadius: '12px',
-      backgroundColor: 'var(--color-white)',
-      border: 'none',
-      boxShadow: 'none',
-      cursor: 'pointer',
-    }),
-    menu: (base: object) => ({
-      ...base,
-      borderRadius: '12px',
-      overflow: 'hidden',
-      boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
-    }),
-    menuList: (base: object) => ({
-      ...base,
-      borderRadius: '12px',
-      padding: '8px',
-    }),
-    option: (
-      base: object,
-      state: { isSelected: boolean; isFocused: boolean },
-    ) => ({
-      ...base,
-      backgroundColor: 'white',
-      color:
-        state.isSelected || state.isFocused
-          ? 'var(--color-main)'
-          : 'var(--color-gray)',
-      fontWeight: state.isSelected ? '500' : '400',
-      cursor: 'pointer',
-    }),
-    dropdownIndicator: (base: object) => ({
-      ...base,
-      color: 'var(--color-main)',
-      '& svg': {
-        width: '24px',
-        height: '24px',
-      },
-    }),
-    placeholder: (base: object) => ({
-      ...base,
-      color: 'var(--color-main)',
-    }),
-    indicatorSeparator: () => ({
-      display: 'none',
-    }),
-  };
-
   return (
     <div className="container pt-[40px] pb-[32px] md:pt-[84px] md:pb-[56px]">
       <div className="flex items-end justify-center gap-4 flex-wrap">
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray">Car brand</label>
-          <Select
+          <CustomSelect
             instanceId="brand-select"
-            classNamePrefix="react-select"
             options={brandOptions}
             value={brand ? { value: brand, label: brand } : null}
             onChange={(option) => setBrand(option?.value || '')}
             placeholder="Choose a brand"
-            isClearable
-            styles={selectStyles}
           />
         </div>
 
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray">Price / 1 hour</label>
-          <Select
+          <CustomSelect
             instanceId="price-select"
-            classNamePrefix="react-select"
             options={priceOptions}
             value={price ? { value: price, label: price } : null}
             onChange={(option) => setPrice(option?.value || '')}
             placeholder="Choose a price"
-            isClearable
-            styles={selectStyles}
           />
         </div>
 

@@ -40,9 +40,13 @@ export default function CarsList() {
   const allCars = data?.pages.flatMap((page) => page.cars) ?? [];
 
   useEffect(() => {
-    if (isError)
-      toast.error('No cars found for your request. Please try again later.');
-  }, [isError]);
+    if (!isLoading && !isError && allCars.length === 0) {
+      toast.error('No cars found for your request');
+    }
+    if (isError) {
+      toast.error('Something went wrong. Please try again later.');
+    }
+  }, [isError, isLoading, allCars.length]);
 
   if (isLoading)
     return (
