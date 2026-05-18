@@ -5,9 +5,10 @@ import { getCars } from '@/lib/api/clientApi';
 import CarCard from '../CarCard/CarCard';
 import { Car } from '@/types/car';
 import { useSearchParams } from 'next/navigation';
-import { ColorRing } from 'react-loader-spinner';
 import toast from 'react-hot-toast';
 import { useEffect } from 'react';
+import CarsNotFound from '../CarsNotFound/CarsNotFound';
+import Loader from '../ui/Loader/Loader';
 
 export default function CarsList() {
   const searchParams = useSearchParams();
@@ -48,18 +49,9 @@ export default function CarsList() {
     }
   }, [isError, isLoading, allCars.length]);
 
-  if (isLoading)
-    return (
-      <div className="flex justify-center items-center py-20">
-        <ColorRing
-          visible={true}
-          height="120"
-          width="120"
-          ariaLabel="color-ring-loading"
-          colors={['#5b85e1', '#5687a7', '#597390', '#463966', '#5a9cbd']}
-        />
-      </div>
-    );
+  if (!isLoading && allCars.length === 0) return <CarsNotFound />;
+
+  if (isLoading) return <Loader />;
 
   return (
     <div className="container flex flex-col items-center gap-8">
@@ -79,17 +71,7 @@ export default function CarsList() {
           className="w-39 h-11 border border-button rounded-xl hover:border-button-hover mb-6 flex items-center justify-center"
           disabled={isFetchingNextPage}
         >
-          {isFetchingNextPage ? (
-            <ColorRing
-              visible={true}
-              height="40"
-              width="40"
-              ariaLabel="color-ring-loading"
-              colors={['#5b85e1', '#5687a7', '#597390', '#463966', '#5a9cbd']}
-            />
-          ) : (
-            'Load more'
-          )}
+          {isFetchingNextPage ? <Loader height={44} width={44} /> : 'Load more'}
         </button>
       )}
     </div>

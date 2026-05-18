@@ -174,7 +174,7 @@ input[type='number']::-webkit-inner-spin-button {
 }
 
 .react-select__menu-list::-webkit-scrollbar-thumb {
-  background: var(--color-gray);
+  background: var(--color-gray-light);
   border-radius: 10px;
   border: 8px solid white;
   background-clip: padding-box;
