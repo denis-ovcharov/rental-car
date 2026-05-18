@@ -25,9 +25,7 @@ export default function Header() {
         <Link
           href={'/catalog'}
           className={
-            pathname === '/catalog' || pathname.startsWith('/catalog')
-              ? 'text-button'
-              : 'hover:text-button-hover'
+            pathname === '/catalog' ? 'text-button' : 'hover:text-button-hover'
           }
         >
           Catalog
