@@ -5,6 +5,7 @@ import Select, {
   DropdownIndicatorProps,
   SingleValueProps,
   GroupBase,
+  MenuProps,
 } from 'react-select';
 import { BsChevronDown } from 'react-icons/bs';
 
@@ -36,6 +37,7 @@ const selectStyles = {
     ...base,
     borderRadius: '12px',
     boxShadow: '0 4px 20px rgba(0,0,0,0.1)',
+    animation: 'fadeInDown 0.2s ease-out',
   }),
   menuList: (base: object) => ({
     ...base,
@@ -85,6 +87,12 @@ const CustomDropdownIndicator = (
   </components.DropdownIndicator>
 );
 
+const CustomMenu = (props: MenuProps<Option>) => (
+  <components.Menu {...props} className="animate-fade-in-down">
+    {props.children}
+  </components.Menu>
+);
+
 export default function CustomSelect({
   options,
   value,
@@ -113,6 +121,7 @@ export default function CustomSelect({
       components={{
         DropdownIndicator: CustomDropdownIndicator,
         SingleValue: PriceSingleValue,
+        Menu: CustomMenu,
       }}
       isClearable
     />
