@@ -18,14 +18,14 @@ export default function Hero() {
         </h1>
         <h2
           className="animate-fade-in-up text-base md:text-lg lg:text-[24px]"
-          style={{ animationDelay: '0.8s', opacity: 0 }}
+          style={{ animationDelay: '0.6s', opacity: 0 }}
         >
           Reliable and budget-friendly rentals for any journey
         </h2>
         <Button
           href="/catalog"
           className="animate-fade-in-up w-69"
-          style={{ animationDelay: '1.6s', opacity: 0 }}
+          style={{ animationDelay: '1.2s', opacity: 0 }}
         >
           View Catalog
         </Button>
