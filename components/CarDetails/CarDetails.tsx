@@ -110,7 +110,7 @@ export default function CarDetails({ car }: CarDetailsProps) {
 
             {/* Features */}
             <div>
-              <h3 className="font-semibold text-2xl mb-3 pt-6">
+              <h3 className="font-semibold text-2xl mb-3 py-6">
                 Accessories and functionalities:
               </h3>
               <ul className="flex flex-col gap-2">
