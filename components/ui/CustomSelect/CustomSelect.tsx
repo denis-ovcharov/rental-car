@@ -19,6 +19,7 @@ type CustomSelectProps = {
   width?: string;
   instanceId: string;
   formatSingleValue?: (value: string) => string;
+  isSearchable?: boolean;
 };
 
 const selectStyles = {
@@ -100,6 +101,7 @@ export default function CustomSelect({
   placeholder,
   instanceId,
   formatSingleValue,
+  isSearchable,
 }: CustomSelectProps) {
   const PriceSingleValue = (props: SingleValueProps<Option>) => (
     <components.SingleValue {...props}>
@@ -124,6 +126,7 @@ export default function CustomSelect({
         Menu: CustomMenu,
       }}
       isClearable
+      isSearchable={isSearchable}
     />
   );
 }

@@ -73,6 +73,7 @@ export default function SearchBox() {
           <label className="text-xs text-gray">Price / 1 hour</label>
           <CustomSelect
             instanceId="price-select"
+            isSearchable={false}
             options={priceOptions}
             value={price ? { value: price, label: price } : null}
             onChange={(option) => setPrice(option?.value || '')}
