@@ -5,6 +5,7 @@ import { getBrands } from '@/lib/api/clientApi';
 import { useState } from 'react';
 import { useRouter, useSearchParams } from 'next/navigation';
 import CustomSelect from '../ui/CustomSelect/CustomSelect';
+import Button from '../ui/Button/Button';
 
 export default function SearchBox() {
   const router = useRouter();
@@ -101,12 +102,9 @@ export default function SearchBox() {
           </div>
         </div>
         <div className="flex flex-col gap-2 items-center">
-          <button
-            onClick={handleSearch}
-            className="h-12 px-12.75 py-3 bg-button hover:bg-button-hover text-white rounded-xl"
-          >
+          <Button onClick={handleSearch} className="h-12 px-12.75">
             Search
-          </button>
+          </Button>
           <button
             onClick={handleClear}
             className="text-sm text-gray hover:text-button"

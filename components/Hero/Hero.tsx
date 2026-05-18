@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Button from '../ui/Button/Button';
 
 export default function Hero() {
   return (
@@ -22,13 +23,13 @@ export default function Hero() {
         >
           Reliable and budget-friendly rentals for any journey
         </h2>
-        <Link
+        <Button
           href="/catalog"
-          className="animate-fade-in-up w-69 h-11 rounded-xl text-white text-center btn-primary bg-button flex items-center justify-center"
+          className="animate-fade-in-up w-69"
           style={{ animationDelay: '1.6s', opacity: 0 }}
         >
           View Catalog
-        </Link>
+        </Button>
       </div>
     </div>
   );

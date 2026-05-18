@@ -4,6 +4,7 @@ import { createBookingRequest } from '@/lib/api/clientApi';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import toast from 'react-hot-toast';
 import * as Yup from 'yup';
+import Button from '../ui/Button/Button';
 
 type BookingFormProps = {
   carId: string;
@@ -82,12 +83,9 @@ export default function BookingForm({ carId }: BookingFormProps) {
               className="text-red-500 text-xs mt-1"
             />
           </div>
-          <button
-            type="submit"
-            className="w-full h-11 bg-button hover:bg-button-hover text-white rounded-xl self-center mt-2"
-          >
+          <Button type="submit" className="w-full mt-2">
             Send
-          </button>
+          </Button>
         </Form>
       </Formik>
     </div>

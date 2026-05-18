@@ -1,6 +1,6 @@
 import { Car } from '@/types/car';
 import Image from 'next/image';
-import Link from 'next/link';
+import Button from '../ui/Button/Button';
 
 type CarCardProps = {
   car: Car;
@@ -43,14 +43,14 @@ export default function CarCard({ car }: CarCardProps) {
         <li>{car.mileage.toLocaleString()} km</li>
       </ul>
 
-      <Link
+      <Button
         href={`/catalog/${car.id}`}
         target="_blank"
         rel="noopener noreferrer"
-        className="w-full h-11 bg-button hover:bg-button-hover text-white rounded-xl flex items-center justify-center"
+        className="w-full"
       >
         Read more
-      </Link>
+      </Button>
     </li>
   );
 }
