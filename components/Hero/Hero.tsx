@@ -3,7 +3,7 @@ import Button from '../ui/Button/Button';
 export default function Hero() {
   return (
     <div
-      className="w-full h-100 md:h-137.5 lg:h-175 bg-cover bg-center flex flex-col items-center justify-end pb-10 md:pb-15"
+      className="w-full h-100 md:h-137.5 lg:h-175 bg-cover bg-center flex flex-col items-center justify-end pb-10 md:pb-29"
       style={{
         backgroundImage: "url('/home-bg.jpg')",
         height: 'calc(100vh - 68px)',
