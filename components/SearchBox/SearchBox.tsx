@@ -58,9 +58,12 @@ export default function SearchBox() {
   const selectStyles = {
     control: (base: object) => ({
       ...base,
+      width: '210px',
       height: '48px',
+      minWidth: '210px',
+      maxWidth: '210px',
       borderRadius: '12px',
-      backgroundColor: '#f7f7f7',
+      backgroundColor: 'var(--color-white)',
       border: 'none',
       boxShadow: 'none',
       cursor: 'pointer',
@@ -81,17 +84,25 @@ export default function SearchBox() {
       state: { isSelected: boolean; isFocused: boolean },
     ) => ({
       ...base,
-      backgroundColor: state.isSelected
-        ? '#00aad4'
-        : state.isFocused
-          ? '#f7f7f7'
-          : 'white',
-      color: '#101828',
+      backgroundColor: 'white',
+      color:
+        state.isSelected || state.isFocused
+          ? 'var(--color-main)'
+          : 'var(--color-gray)',
+      fontWeight: state.isSelected ? '500' : '400',
       cursor: 'pointer',
+    }),
+    dropdownIndicator: (base: object) => ({
+      ...base,
+      color: 'var(--color-main)',
+      '& svg': {
+        width: '24px',
+        height: '24px',
+      },
     }),
     placeholder: (base: object) => ({
       ...base,
-      color: '#101828',
+      color: 'var(--color-main)',
     }),
     indicatorSeparator: () => ({
       display: 'none',
@@ -104,6 +115,8 @@ export default function SearchBox() {
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray">Car brand</label>
           <Select
+            instanceId="brand-select"
+            classNamePrefix="react-select"
             options={brandOptions}
             value={brand ? { value: brand, label: brand } : null}
             onChange={(option) => setBrand(option?.value || '')}
@@ -116,6 +129,8 @@ export default function SearchBox() {
         <div className="flex flex-col gap-1">
           <label className="text-xs text-gray">Price / 1 hour</label>
           <Select
+            instanceId="price-select"
+            classNamePrefix="react-select"
             options={priceOptions}
             value={price ? { value: price, label: price } : null}
             onChange={(option) => setPrice(option?.value || '')}
