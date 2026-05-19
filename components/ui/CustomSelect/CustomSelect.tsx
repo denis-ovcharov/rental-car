@@ -67,8 +67,8 @@ const selectStyles = {
       color: 'var(--color-gray)',
     },
     '& svg': {
-      width: '24px',
-      height: '24px',
+      width: '20px',
+      height: '20px',
     },
   }),
   placeholder: (base: object) => ({
