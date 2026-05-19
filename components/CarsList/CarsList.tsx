@@ -9,6 +9,7 @@ import toast from 'react-hot-toast';
 import { useEffect } from 'react';
 import CarsNotFound from '../CarsNotFound/CarsNotFound';
 import Loader from '../ui/Loader/Loader';
+import Button from '../ui/Button/Button';
 
 export default function CarsList() {
   const searchParams = useSearchParams();
@@ -61,18 +62,19 @@ export default function CarsList() {
         ))}
       </ul>
       {hasNextPage && (
-        <button
+        <Button
           onClick={() => {
             fetchNextPage();
             setTimeout(() => {
               window.scrollBy({ top: 500, behavior: 'smooth' });
             }, 500);
           }}
-          className="w-39 h-11 border border-button rounded-xl hover:border-button-hover mb-6 flex items-center justify-center"
+          variant="outline"
+          className="w-39  mb-6 font-black text-3xl"
           disabled={isFetchingNextPage}
         >
           {isFetchingNextPage ? <Loader height={44} width={44} /> : 'Load more'}
-        </button>
+        </Button>
       )}
     </div>
   );

@@ -29,8 +29,7 @@ export default function Button({
     'h-[44px] px-8 rounded-[12px] flex items-center justify-center';
   const variants = {
     primary: 'bg-button hover:bg-button-hover text-white',
-    outline:
-      'border border-button text-button hover:bg-button hover:text-white',
+    outline: 'border border-button text-main hover:border-button-hover',
   };
 
   if (href) {
