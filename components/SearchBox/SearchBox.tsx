@@ -59,7 +59,7 @@ export default function SearchBox() {
   return (
     <div className="container pt-10 pb-8 md:pt-21 md:pb-14">
       <div className="flex items-end justify-center gap-4 flex-wrap">
-        <div className="flex flex-col gap-1">
+        <div className="mb-7 flex flex-col gap-1">
           <label className="text-xs text-gray">Car brand</label>
           <CustomSelect
             instanceId="brand-select"
@@ -70,7 +70,7 @@ export default function SearchBox() {
           />
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="mb-7 flex flex-col gap-1">
           <label className="text-xs text-gray ">Price / 1 hour</label>
           <CustomSelect
             instanceId="price-select"
@@ -82,7 +82,7 @@ export default function SearchBox() {
           />
         </div>
 
-        <div className="flex flex-col gap-1">
+        <div className="mb-7 flex flex-col gap-1">
           <label className="text-xs text-gray">Car mileage / km</label>
           <div className="flex">
             <input
